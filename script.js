@@ -2,7 +2,7 @@
 document.addEventListener('wheel', (event) => {
     event.preventDefault();
     let body = document.querySelector("body");
-    body.scrollLeft += event.deltaY * 2.5;
+    body.scrollLeft += event.deltaY * 2;
 }, { passive: false });
 
 // Parallax background on move on #about
