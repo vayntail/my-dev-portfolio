@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Nunito", serif;
+    font-weight: 400;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    width: 300%;
+    height: 100%;
+}
+
+section {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about {
+    position: relative;
+
+    #abs-div {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .parallax-element {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+
+        img {
+            width: 120%;
+            height: 120%;
+        }
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+}
+
+#projects {
+    #flex-view {
+        width: 100%;
+        height: 100%;
+
+        #projects-list {
+            list-style-type: none;
+            display: flex;
+            width: 100%;
+            height: 100%;
+
+            li {
+                flex: 1;
+
+            }
+
+            .project-card {
+                flex: 1;
+                border: 1px solid black;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
