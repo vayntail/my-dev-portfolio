@@ -59,9 +59,29 @@ section {
         .parallax-element {
             width: 100px;
             height: 100px;
-            background-color: red;
+            border: 1px solid black;
             position: absolute;
         }
+
+        #element1 {
+            width: 300px;
+            height: 300px;
+            bottom: 5%;
+            left: 8%;
+        }
+        #element2 {
+            top: 18%;
+            left: 20%;
+        }
+        #element3 {
+            top: 10%;
+            left: 70%;
+        }
+        #element4 {
+            top: 40%;
+            right: 8%;
+        }
+        
 
         img {
             width: 120%;
@@ -69,8 +89,15 @@ section {
         }
     }
 
+
     h1 {
         font-size: 2rem;
+    }
+
+    #scroll-arrow {
+        position: absolute;
+        bottom: 8%;
+        right: 8%;
     }
 
 }
@@ -78,7 +105,7 @@ section {
 #projects {
     #flex-view {
         width: 100%;
-        height: 100%;
+        height: 60%;
 
         #projects-list {
             list-style-type: none;
