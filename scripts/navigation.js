@@ -1,4 +1,4 @@
-const nav = document.querySelector("nav");
+const nav = document.querySelector(".nav");
 let sectionNavs = [...nav.children];
 
 function setSectionNavs(){
