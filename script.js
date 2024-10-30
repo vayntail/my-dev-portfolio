@@ -64,15 +64,15 @@ function content(delta) {
 }
 
 // scroll function on DEVICES
-let touchstartY = 0;
-let touchendY = 0;
+let touchstartX = 0;
+let touchendX = 0;
 document.addEventListener('touchstart', e => {
-  touchstartY = e.changedTouches[0].screenY;
+  touchstartX = e.changedTouches[0].screenX;
 });
 
 document.addEventListener('touchend', e => {
-  touchendY = e.changedTouches[0].screenY;
-  content(touchendY - touchstartY);
+  touchendX = e.changedTouches[0].screenX;
+  content(touchendX - touchstartX);
 });
 
 
