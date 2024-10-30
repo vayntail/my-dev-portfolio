@@ -47,7 +47,7 @@ main {
         justify-content: center;
         align-items: center;
     }
-    
+
 }
 
 #about {
@@ -91,9 +91,9 @@ main {
             }
 
             img {
-                    width: 100%;
-                    height: 100%;
-                }
+                width: 100%;
+                height: 100%;
+            }
         }
 
 
@@ -117,24 +117,27 @@ main {
             bottom: 5%;
             left: 8%;
         }
-        
+
         #element2 {
             top: 18%;
             left: 20%;
         }
+
         #element2:hover {
             width: 200px;
             height: 200px;
         }
+
         #element3 {
             top: 10%;
             left: 70%;
         }
+
         #element4 {
             top: 40%;
             right: 8%;
         }
-        
+
 
         img {
             width: 120%;
@@ -170,43 +173,51 @@ main {
             li {
                 flex: 1;
                 transition: all 1s;
+
                 .project-card {
                     flex: 1;
                     width: 100%;
                     height: 100%;
                     display: flex;
-    
+
                     .image-container {
                         background-color: aliceblue;
                         flex: 2;
+
                         img {
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
                         }
                     }
+
                     .text-container {
                         display: none;
                     }
                 }
             }
+
             li:hover {
                 flex: 4;
+
                 .project-card {
                     flex: 1;
                     border: 1px solid black;
                     width: 100%;
                     height: 100%;
                     display: flex;
+
                     .image-container {
                         background-color: aliceblue;
                         flex: 2;
+
                         img {
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
                         }
                     }
+
                     .text-container {
                         flex: 1;
                         display: block;
@@ -214,7 +225,7 @@ main {
                 }
             }
 
-            
+
         }
     }
 }
@@ -224,37 +235,47 @@ main {
         display: flex;
         flex-direction: column;
         gap: 20px;
+
         #social-icons {
             display: flex;
             width: 100%;
             justify-content: space-around;
-    
+
             svg {
                 width: 50px;
                 height: 50px;
             }
         }
     }
-    
-    
+
+
 }
 
 
 
 
 @media only screen and (max-width: 600px) {
+
+    html,
     body {
-      background-color: lightblue;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
     }
+
+    body {
+        background-color: lightblue;
+    }
+
     main {
         flex-direction: column;
         height: 330%;
         width: 100%;
     }
+
     #element1 {
         width: 250px;
         height: 250px;
         bottom: 0%;
         left: 8%;
     }
-  }
+}
