@@ -1,8 +1,13 @@
-sectionNavs = [
-    document.getElementById('about-a'),
-    document.getElementById('projects-a'),
-    document.getElementById('contact-a')
-];
+const nav = document.querySelector("nav");
+const sectionNavs = [...nav.children].filter((nav) => {
+    return !(nav.style.display == "none"); // only select those without display of "none"
+});
+// if four nav elements, assume mobile device and change them to circles
+if (sectionNavs.length == 4) {
+    sectionNavs.forEach((nav) => {
+        nav.classList.add("circle");
+    })
+}
 
 let activeIndex = 0;
 setActiveNav(0); // set starting nav
@@ -77,6 +82,9 @@ document.addEventListener('touchend', e => {
 
 
 function setActiveNav(index) {
+    console.log(sectionNavs);
+    console.log(index);
+
     sectionNavs.forEach(nav => {
         nav.classList.remove("active");
     });
@@ -96,25 +104,3 @@ function isScrollingDown(delta) {
         return false;
     }
 }
-
-// Parallax background on move on #about
-window.onmousemove = (event) => {
-    let absDiv = document.querySelector("#abs-div");
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-    const centerX = document.querySelector("#about").getBoundingClientRect().width / 2;
-    const centerY = document.querySelector("#about").getBoundingClientRect().height / 2;
-    const offsetX = (mouseX - centerX) / centerX; // as percentage decimals
-    const offsetY = (mouseY - centerY) / centerY;
-    console.log(absDiv.style.bottom)
-    // absDiv.style.right = offsetX * centerX / 10 + "px";
-    gsap.to("#abs-div", { x: (offsetX * centerX / 10) * -1, duration: 0.5 });
-    gsap.to("#abs-div", { y: (offsetY * centerY / 10) * -1, duration: 0.5 });
-    // absDiv.style.bottom = offsetY * centerY / 10 + "px";
-}
-
-// Parallax element hover animation
-const parallaxEl = document.querySelector(".parallax-element");
-parallaxEl.addEventListener("mouseover", () => {
-    console.log("hovered")
-})

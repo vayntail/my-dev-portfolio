@@ -10,9 +10,10 @@
 
 <body>
     <nav>
-        <a href="#about" id="about-a" class="active">About</a>
-        <a href="#projects" id="projects-a">Projects</a>
-        <a href="#contact" id="contact-a">Contact</a>
+        <a class="nav-a" href="#about" id="about-a">About</a>
+        <a class="nav-a" href="#skills" id="skills-a">Skills</a>
+        <a class="nav-a" href="#projects" id="projects-a">Projects</a>
+        <a class="nav-a" href="#contact" id="contact-a">Contact</a>
     </nav>
     <main>
         <section id="about">
@@ -60,6 +61,50 @@
             </div>
             <h1>Hello!👋 My name is Yoon <br /> and I'm a software engineer~</h1>
             <div id="scroll-arrow">scroll to see more!</div>
+        </section>
+        <section id="skills">
+            <div id="abs-div">
+                <div class="parallax-element" id="element1">
+                    <div class="main-avatar-container">
+                        <img src="assets/avatar/bc9e79e0dbbcf04a1bfb681756d57733.jpg" />
+                    </div>
+                    
+                </div>
+                <div class="parallax-element skills" id="element2">Back end</div>
+                <div class="parallax-element skills" id="element3">
+                    <div class="main-icon-container">
+                        <img class="main-icon" src="assets/logos/front-end/front-end.png" />
+                    </div>
+                </div>
+                <div class="parallax-element skills" id="element4">
+                    <div class="main-icon-container">
+                        <img class="main-icon" src="assets/logos/design/design.png" />
+                    </div>
+                    
+                    <div class="icons">
+                        <div class="icon-container">
+                            <svg viewBox="0 0 128 128">
+                                <path fill="#0acf83"
+                                    d="M45.5 129c11.9 0 21.5-9.6 21.5-21.5V86H45.5C33.6 86 24 95.6 24 107.5S33.6 129 45.5 129zm0 0">
+                                </path>
+                                <path fill="#a259ff"
+                                    d="M24 64.5C24 52.6 33.6 43 45.5 43H67v43H45.5C33.6 86 24 76.4 24 64.5zm0 0"></path>
+                                <path fill="#f24e1e"
+                                    d="M24 21.5C24 9.6 33.6 0 45.5 0H67v43H45.5C33.6 43 24 33.4 24 21.5zm0 0"></path>
+                                <path fill="#ff7262" d="M67 0h21.5C100.4 0 110 9.6 110 21.5S100.4 43 88.5 43H67zm0 0">
+                                </path>
+                                <path fill="#1abcfe"
+                                    d="M110 64.5c0 11.9-9.6 21.5-21.5 21.5S67 76.4 67 64.5 76.6 43 88.5 43 110 52.6 110 64.5zm0 0">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="textbox">
+                    I do UI/UX design!
+                </div>
+                <!-- <img class="thumbnail" src="assets/liana-s-9S6rvZXuBjk-unsplash.jpg"/> -->
+            </div>
         </section>
         <section id="projects">
             <div id="flex-view">
@@ -135,8 +180,8 @@
         </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="animation.js"></script>
-    <script src="script.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
