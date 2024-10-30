@@ -1,13 +1,27 @@
 const nav = document.querySelector("nav");
-const sectionNavs = [...nav.children].filter((nav) => {
-    return !(nav.style.display == "none"); // only select those without display of "none"
-});
-// if four nav elements, assume mobile device and change them to circles
-if (sectionNavs.length == 4) {
-    sectionNavs.forEach((nav) => {
-        nav.classList.add("circle");
-    })
+let sectionNavs = [...nav.children];
+
+function setSectionNavs(){
+    // Remove skills tab if on pc display
+    let pcDisplay = document.querySelector("#skills").style.display = "none";
+    if (pcDisplay && sectionNavs.length==4) {
+        sectionNavs.splice(1, 1);
+        console.log(sectionNavs)
+    }
+    else if (!pcDisplay){
+        sectionNavs = [...nav.children];
+    }
 }
+
+addEventListener("resize", (event) => {});
+
+onresize = (event) => {
+    setSectionNavs();
+};
+
+
+setSectionNavs();
+
 
 let activeIndex = 0;
 setActiveNav(0); // set starting nav
