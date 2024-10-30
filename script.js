@@ -15,32 +15,26 @@ document.addEventListener('wheel', (event) => {
     if (!justScrolled) {
         switch (activeIndex) {
             case 0: // about
-                console.log(isScrollingDown(event.deltaY))
                 if (isScrollingDown(event.deltaY)) {
-                    activeIndex = 1;
+                    setActiveNav(1);
                 }
-                sectionNavs[activeIndex].click();
                 break;
             case 1: // projects
                 if (isScrollingDown(event.deltaY)) {
-                    activeIndex = 2;
+                    setActiveNav(2);
                 }
                 else {
-                    activeIndex = 0;
+                    setActiveNav(0);
                 }
-                sectionNavs[activeIndex].click();
                 break;
             case 2: // contact
                 if (!isScrollingDown(event.deltaY)) {
-                    activeIndex = 1;
+                    setActiveNav(1);
                 }
-                sectionNavs[activeIndex].click();
                 break;
         }
         justScrolled = true;
     }
-    
-    
 
     clearTimeout(justScrolled);
     justScrolled = setTimeout(() => {
@@ -51,6 +45,15 @@ document.addEventListener('wheel', (event) => {
 
     // body.scrollLeft += event.deltaY * 2;
 }, { passive: false });
+
+function setActiveNav(index) {
+    sectionNavs.forEach(nav => {
+        nav.classList.remove("active");
+    });
+    sectionNavs[index].click();
+    sectionNavs[index].classList.add("active");
+    activeIndex = index;
+}
 
 function isScrollingDown(delta) {
     if (delta > 0) {
