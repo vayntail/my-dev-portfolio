@@ -72,7 +72,7 @@ document.addEventListener('touchstart', e => {
 
 document.addEventListener('touchend', e => {
   touchendX = e.changedTouches[0].screenX;
-  content(touchendX - touchstartX);
+  content(touchstartX - touchendX);
 });
 
 
