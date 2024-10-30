@@ -19,19 +19,26 @@ sectionNavs[2].addEventListener("click", () => {
     setActiveNav(2);
 })
 
-// Make body scroll horizontal with mouse instead of vertical
+// Scroll function on PC
 document.addEventListener('wheel', (event) => {
     event.preventDefault();
 
+    content(event.deltaY);
+
+    // body.scrollLeft += event.deltaY * 2;
+}, { passive: false });
+
+// Content
+function content(delta) {
     if (!justScrolled) {
         switch (activeIndex) {
             case 0: // about
-                if (isScrollingDown(event.deltaY)) {
+                if (isScrollingDown(delta)) {
                     setActiveNav(1);
                 }
                 break;
             case 1: // projects
-                if (isScrollingDown(event.deltaY)) {
+                if (isScrollingDown(delta)) {
                     setActiveNav(2);
                 }
                 else {
@@ -39,7 +46,7 @@ document.addEventListener('wheel', (event) => {
                 }
                 break;
             case 2: // contact
-                if (!isScrollingDown(event.deltaY)) {
+                if (!isScrollingDown(delta)) {
                     setActiveNav(1);
                 }
                 break;
@@ -54,8 +61,20 @@ document.addEventListener('wheel', (event) => {
     }, 400);
 
 
-    // body.scrollLeft += event.deltaY * 2;
-}, { passive: false });
+}
+
+// scroll function on DEVICES
+let touchstartY = 0;
+let touchendY = 0;
+document.addEventListener('touchstart', e => {
+  touchstartY = e.changedTouches[0].screenY;
+});
+
+document.addEventListener('touchend', e => {
+  touchendY = e.changedTouches[0].screenY;
+  content(touchendY - touchstartY);
+});
+
 
 function setActiveNav(index) {
     sectionNavs.forEach(nav => {
