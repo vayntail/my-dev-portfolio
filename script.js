@@ -3,10 +3,21 @@ sectionNavs = [
     document.getElementById('projects-a'),
     document.getElementById('contact-a')
 ];
+
 let activeIndex = 0;
-sectionNavs[activeIndex].click();
+setActiveNav(0); // set starting nav
 let justScrolled = false; // variable for checking if we just scrolled
 
+// event listeners to set nav's when tags are clicked
+sectionNavs[0].addEventListener("click", () => {
+    setActiveNav(0);
+})
+sectionNavs[1].addEventListener("click", () => {
+    setActiveNav(1);
+})
+sectionNavs[2].addEventListener("click", () => {
+    setActiveNav(2);
+})
 
 // Make body scroll horizontal with mouse instead of vertical
 document.addEventListener('wheel', (event) => {
@@ -83,4 +94,8 @@ window.onmousemove = (event) => {
     // absDiv.style.bottom = offsetY * centerY / 10 + "px";
 }
 
-// document.getElementById('projects-a').click();
+// Parallax element hover animation
+const parallaxEl = document.querySelector(".parallax-element");
+parallaxEl.addEventListener("mouseover", () => {
+    console.log("hovered")
+})
